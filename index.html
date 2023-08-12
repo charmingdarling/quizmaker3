@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Quiz 3</title>
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <section class="timecontainer">
+      <div class="timer"><span>Time:</span></div>
+    </section>
+    <section class="startcontainer">
+      <div class="start">
+        <h1>JavaScript Quiz Challenge</h1>
+        <p>Take this quiz to see if you know your stuff.</p>
+        <button id="beginbutton">Begin</button>
+      </div>
+    </section>
+    <section class="quizcontainer hidden">
+      <div class="questionarea">
+        <h2 id="question">Question</h2>
+        <ul id="answerbank">
+          <li><button class="data" type="button">Answer</button></li>
+          <li><button class="data" type="button">Answer</button></li>
+          <li><button class="data" type="button">Answer</button></li>
+          <li><button class="data" type="button">Answer</button></li>
+        </ul>
+        <hr />
+        <div id="feedback"><p></p></div>
+      </div>
+    </section>
+    <section class="finalscorecontainer hidden">
+      <form class="enterscore">
+        <p>Final Score: <span id="finalscore">##</span></p>
+        <label class="initials">Enter your initials:</label>
+        <input name="initials" type="text" placeholder="JavaScript Champ" />
+        <p><button type="submit">Submit to Score Board</button></p>
+      </form>
+    </section>
+    <section class="boardlist hidden">
+      <div class="scorelist">
+        <h2>High Scores</h2>
+        <table id="table">
+          <tr>
+            <th>Score</th>
+            <th>Name</th>
+          </tr>
+          <tr>
+            <td class="lastScore"></td>
+            <td></td>
+          </tr>
+        </table>
+        <p>
+          <button class="restart">Return to Start</button>
+          <button class="resetscores">Reset Score Board</button>
+        </p>
+      </div>
+    </section>
+    <script src="/assets/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+#beginbutton {
+  color: rgb(105, 126, 136);
+  font-size: 18px;
+  font-style: italic;
+}
+
+#answerbank {
+  display: grid;
+  row-gap: 10px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+}
+
+h2{
+  font-size: 18px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.startcontainer {
+  align-items: center;
+  background-color: rgb(214, 238, 255);
+  border-style: solid;
+  border-radius: 10px;
+  color: rgb(0, 21, 128);
+  padding: 2%;
+}
+
+.quizcontainer {
+  align-items: center;
+  background-color: rgb(201, 222, 245);
+  border-style: solid;
+  border-radius: 10px;
+  color: rgb(0, 21, 128);
+  padding: 2%;
+}
+
+.starterbutton {
+  background-color: rgb(130, 105, 136);
+  border-radius: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 4px 2px;
+  padding: 5px 10px;
+  text-align: center;
+  transition-duration: 0.3s;
+}
+
+.starterbutton:hover {
+  background-color: rgb(104, 83, 109);
+}
+
+.timer {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.questionarea {
+  background-color: white;
+  border-radius: 10px;
+  border: 0;
+  padding: 5px 20px;
+}
+
+#answerbank {
+  background-color: rgb(201, 222, 245);
+  border-radius: 10px;
+  border: none;
+  margin: 4px 2px;
+  padding: 15px 20px;
+}
+
+.answerbutton {
+  background-color: rgb(224, 201, 245);
+  border-radius: 10px;
+  border: none;
+  color: rgb(44, 39, 49);
+  cursor: pointer;
+  font-size: 18px;
+  margin: 4px 2px;
+  text-align: left;
+  transition-duration: 0.4s;
+}
+
+.answerbutton:hover {
+  background-color: rgb(104, 83, 109);
+}
+
+.boardlist {
+  background-color: rgb(214, 238, 255);
+  border-style: solid;
+  border-radius: 10px;
+  border: 2;
+  color: rgb(0, 21, 128);
+  padding: 2%;
+}
+
+
+.finalscorecontainer {
+  background-color: rgb(79, 101, 142);
+  border-radius: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 10px 0px;
+  padding: 5px 10px;
+  text-align: left;
+  transition-duration: 0.4s; /*I don't see this working. Why? */
+}
+
+#highscorelist {
+  list-style: decimal;
+  margin-bottom:bold
+}
+
+#userinitials{
+  font-size: 30px;
+  background-color: rgb(35, 63, 116);
+}
