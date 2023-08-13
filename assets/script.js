@@ -22,44 +22,6 @@ let highScores = JSON.parse(localStorage.getItem("highScore")) || [];
 addEventListener("DOMContentLoaded", () => {
   console.log("Loading DOM");
 
-  //Questions, Answers, Correct Answer//
-  const questionBank = [
-    {
-      question:
-        "The ___________ type respresents a logical entity and is inhabited by two values: true and false?",
-      answers: ["Boolean", "String", "Number", "Undefined"],
-      correct: 0,
-    },
-    {
-      question: "What would you use when recalling an 'id'?",
-      answers: [".", "@", "#", "~"],
-      correct: 1,
-    },
-    {
-      question:
-        "A __________ is a function that's passed into another function, with the expectation that the ________ will be called at the appropriate time.",
-      answers: ["hollerback", "primitive", "iteration", "callback"],
-      correct: 3,
-    },
-    {
-      question:
-        "_____________ ____________ is a technique that enables your program to start a potentially long-running task and still be able to be responsive to other events while that task runs.",
-      answers: [
-        "Synchronous programming",
-        "Asynchronous programming",
-        "Redundant programming",
-        "None of the above",
-      ],
-      correct: 1,
-    },
-    {
-      question:
-        "What is a cross-platform, object-oriented scripting language used to make webpages interactive",
-      answers: ["HTML", "JavaScript", "CSS", "The Internet"],
-      correct: 1,
-    },
-  ];
-
   //Timer Display//
   function timerSet() {
     timerInterval = setInterval(function () {
@@ -86,9 +48,6 @@ addEventListener("DOMContentLoaded", () => {
     start.classList.add("hidden");
     quiz.classList.remove("hidden");
     timerSet();
-
-    // qIndex = 0; // restart the q_index to [0]
-    // secondsLeft = 100; // Refers to global scope now without the "let"
     showNextQuestion();
   }
 
@@ -112,7 +71,8 @@ addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Compare correct/wrong answers from user
+  // Compare answers from user //
+
   function checkAnswers(event) {
     let answer = event.target.getAttribute("data");
     const feedback = document.querySelector("#feedback");
@@ -152,14 +112,15 @@ addEventListener("DOMContentLoaded", () => {
     showHighScoreBoard();
   });
 
-  //Score List//
+  // Score List //
   function showHighScoreBoard() {
     const table = document.querySelector("#table");
     score.classList.add("hidden");
     boardList.classList.remove("hidden");
     const lastScore = document.querySelector(".lastScore");
-    lastScore.innerHTML = "";
+    // lastScore.innerHTML = "";
 
+    highScores = JSON.parse(localStorage.getItem("highScore")); // Pulling the "highScore" string, which parses
     highScores.sort((a, b) => b.scoreNumber - a.scoreNumber); // Sorts scores. Understands that the value to right of '-' is less than b, sort() modifies the original (highScores)
 
     console.log(highScores.length > 9 ? 10 : highScores.length); // Replacement. Logic similar for Line 174 and 167
@@ -170,6 +131,8 @@ addEventListener("DOMContentLoaded", () => {
     } else {
       loops = highScores.length;
     }
+
+    table.innerHTML = "<tr><th>Score</th><th>Name</th></tr>"; //?Set innerHTML to create table
 
     for (var i = 0; i < loops; i++) {
       console.log(i);
@@ -185,7 +148,8 @@ addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Return to Start
+  // Return to Start //
+
   restart.addEventListener("click", returnStart);
 
   function returnStart() {
@@ -204,7 +168,47 @@ addEventListener("DOMContentLoaded", () => {
   function resetScoreBoard() {
     localStorage.setItem("highScore", JSON.stringify([]));
     highScores = []; // Resetting highScores to an empty value.
+    let table = document.querySelector("#table");
+    table.innerHTML = "";
   }
+
+  //Questions, Answers, Correct Answer//
+  const questionBank = [
+    {
+      question:
+        "The ___________ type respresents a logical entity and is inhabited by two values: true and false?",
+      answers: ["Boolean", "String", "Number", "Undefined"],
+      correct: 0,
+    },
+    {
+      question: "What would you use when recalling an 'id'?",
+      answers: [".", "@", "#", "~"],
+      correct: 1,
+    },
+    {
+      question:
+        "A __________ is a function that's passed into another function, with the expectation that the ________ will be called at the appropriate time.",
+      answers: ["hollerback", "primitive", "iteration", "callback"],
+      correct: 3,
+    },
+    {
+      question:
+        "_____________ ____________ is a technique that enables your program to start a potentially long-running task and still be able to be responsive to other events while that task runs.",
+      answers: [
+        "Synchronous programming",
+        "Asynchronous programming",
+        "Redundant programming",
+        "None of the above",
+      ],
+      correct: 1,
+    },
+    {
+      question:
+        "What is a cross-platform, object-oriented scripting language used to make webpages interactive",
+      answers: ["HTML", "JavaScript", "CSS", "The Internet"],
+      correct: 1,
+    },
+  ];
 });
 
 // Place in new score
